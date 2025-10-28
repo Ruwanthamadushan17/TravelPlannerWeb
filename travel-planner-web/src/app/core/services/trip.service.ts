@@ -7,4 +7,5 @@ import { Trip } from '../models/trip';
 export class TripService {
   constructor(private http: HttpClient) {}
   list(): Observable<Trip[]> { return this.http.get<Trip[]>('/api/trips'); }
+  get(id: string) { return this.http.get<Trip>(`/api/trips/${id}`); }
 }
