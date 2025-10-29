@@ -3,6 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   standalone: true,
   selector: 'tp-trip-form',
-  template: `<h2>New Trip</h2><p>Trip Form</p>`,
+  templateUrl: './trip-form.component.html',
 })
 export class TripFormComponent {}
