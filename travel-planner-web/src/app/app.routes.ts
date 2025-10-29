@@ -17,4 +17,9 @@ export const routes: Routes = [
         loadComponent: () => import('./features/trips/trip-detail.component')
             .then(m => m.TripDetailComponent) 
     },
+    {
+        path: '**',
+        loadComponent: () => import('./features/not-found/not-found.component')
+            .then(m => m.NotFoundComponent)
+    },
 ];

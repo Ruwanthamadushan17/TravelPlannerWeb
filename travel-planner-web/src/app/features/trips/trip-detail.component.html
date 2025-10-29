@@ -1,5 +1,6 @@
 <a routerLink="/trips">← Back</a>
-<section *ngIf="trip$ | async as t; else loading">
+<p *ngIf="error" class="error">{{ error }}</p>
+<section *ngIf="!error && (trip$ | async) as t; else loading">
   <h2>Trip details</h2>
   <p><strong>Owner:</strong> {{ t.ownerEmail }}</p>
   <p><strong>Dates:</strong> {{ t.startDate | date }} – {{ t.endDate | date }}</p>
