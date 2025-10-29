@@ -8,13 +8,13 @@ export const routes: Routes = [
             .then(m => m.TripsListComponent) 
     },
     { 
-        path: 'trips/:id', 
-        loadComponent: () => import('./features/trips/trip-detail.component')
-            .then(m => m.TripDetailComponent) 
-    },
-    { 
         path: 'trips/new', 
         loadComponent: () => import('./features/trips/trip-form.component')
             .then(m => m.TripFormComponent) 
+    },
+    { 
+        path: 'trips/:id', 
+        loadComponent: () => import('./features/trips/trip-detail.component')
+            .then(m => m.TripDetailComponent) 
     },
 ];
