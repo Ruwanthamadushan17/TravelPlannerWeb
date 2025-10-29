@@ -19,7 +19,7 @@ import { catchError, of } from 'rxjs';
         <li *ngFor="let t of trips">
           <a [routerLink]="['/trips', t.id]">
             {{ t.destinations?.[0]?.city || 'Trip' }} •
-            {{ t.startDate | date:'mediumDate' }} → {{ t.endDate | date:'mediumDate' }} •
+            {{ t.startDate | date:'mediumDate' }} – {{ t.endDate | date:'mediumDate' }} •
             {{ t.budget | currency:'GBP':'symbol-narrow' }}
           </a>
         </li>
