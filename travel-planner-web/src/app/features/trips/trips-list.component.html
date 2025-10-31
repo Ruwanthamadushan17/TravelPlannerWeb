@@ -2,19 +2,19 @@
   <div class="card">
     <div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
       <h2 style="margin:0">Trips</h2>
-      <a routerLink="/trips/new" class="btn btn-primary">＋ Create a trip</a>
+      <a routerLink="/trips/new" class="btn btn-primary">Create a trip</a>
     </div>
 
     <p *ngIf="error" class="muted" style="margin-top:12px">{{ error }}</p>
     <p *ngIf="!error && (trips$ | async)?.length === 0" class="muted" style="margin-top:12px">No trips yet.</p>
 
     <div *ngIf="trips$ | async as trips" class="grid">
-      <article *ngFor="let t of trips" class="trip card">
+      <article *ngFor="let t of trips; trackBy: trackById" class="trip card">
         <a [routerLink]="['/trips', t.id]" class="title">
           {{ t.destinations[0]?.city ?? 'Trip' }}
         </a>
         <div class="meta muted">
-          {{ t.startDate | date:'mediumDate' }} → {{ t.endDate | date:'mediumDate' }}
+          {{ t.startDate | date:'mediumDate' }} – {{ t.endDate | date:'mediumDate' }}
           <span class="badge">Budget {{ t.budget | currency:'GBP':'symbol-narrow' }}</span>
         </div>
       </article>

@@ -1,14 +1,15 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { TripService } from '../../core/services/trip.service';
+import { TripService } from '@core/services/trip.service';
 
 @Component({
   standalone: true,
   selector: 'tp-trip-form',
   imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './trip-form.component.html',
-  styleUrls: ['./trip-form.component.scss']
+  styleUrls: ['./trip-form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TripFormComponent {
   private fb = inject(FormBuilder);
