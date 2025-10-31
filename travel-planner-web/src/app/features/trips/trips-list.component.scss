@@ -1,0 +1,8 @@
+.grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+.trip .title { color:#fff; font-weight:600; }
+.trip .meta { margin-top: 8px; display:flex; gap:10px; flex-wrap:wrap; }

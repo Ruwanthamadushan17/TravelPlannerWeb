@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+  --bg: #0f1115;
+  --surface: #161a22;
+  --surface-2: #1c2230;
+  --text: #e7eaf0;
+  --muted: #9aa3b2;
+  --primary: #4f8cff;
+  --primary-contrast: #0b1220;
+  --border: #2a3242;
+  --success: #1db954;
+  --danger: #ff5252;
+  --radius: 14px;
+  --shadow: 0 8px 24px rgba(0,0,0,.25);
+  --space: 16px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: radial-gradient(1200px 800px at 10% -10%, #101827 0%, #0b0f17 60%) fixed, var(--bg);
+  color: var(--text);
+  font: 400 16px/1.5 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.container { max-width: 1040px; margin: 0 auto; padding: 24px 20px; }
+.stack > * + * { margin-top: var(--space); }
+
+.card {
+  background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 14px; border-radius: 10px; text-decoration: none;
+  border: 1px solid var(--border); color: var(--text);
+  transition: transform .04s ease, background .15s ease, border-color .15s ease;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--primary); color: #fff; border-color: transparent; }
+.btn-ghost   { background: transparent; }
+.btn:hover   { border-color: #3b465a; }
+
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.muted { color: var(--muted); }
+.badge { padding: 2px 8px; border-radius: 999px; background: #263149; color:#bcd2ff; font-size: 12px; }

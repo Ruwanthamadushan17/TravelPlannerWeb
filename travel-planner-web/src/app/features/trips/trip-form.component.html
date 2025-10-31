@@ -1,0 +1,42 @@
+<a routerLink="/trips" class="btn btn-ghost">← Back</a>
+
+<section class="card stack" style="margin-top:14px">
+  <h2 style="margin:0">New Trip</h2>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" class="form-grid">
+    <label>
+      <span>Email</span>
+      <input type="email" formControlName="ownerEmail" placeholder="owner@example.com"/>
+    </label>
+
+    <label>
+      <span>Start date</span>
+      <input type="date" formControlName="startDate"/>
+    </label>
+
+    <label>
+      <span>End date</span>
+      <input type="date" formControlName="endDate"/>
+    </label>
+
+    <label>
+      <span>Budget</span>
+      <input type="number" formControlName="budget" min="0" step="50"/>
+    </label>
+
+    <label>
+      <span>City</span>
+      <input formControlName="city" placeholder="Paris"/>
+    </label>
+
+    <label>
+      <span>Country</span>
+      <input formControlName="country" placeholder="FR"/>
+    </label>
+
+    <div class="actions">
+      <button type="button" class="btn btn-ghost" routerLink="/trips">Cancel</button>
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid || form.pending">Create</button>
+    </div>
+  </form>
+</section>

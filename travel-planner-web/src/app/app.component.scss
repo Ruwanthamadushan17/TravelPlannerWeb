@@ -1,4 +1,7 @@
 :host { display:block; }
-.shell { max-width:1120px; margin:0 auto; padding:1rem; }
-header { display:flex; justify-content:space-between; align-items:center; }
-nav a { margin-left:1rem; }
+
+.nav { display:flex; align-items:center; justify-content:space-between; }
+.brand {
+  font-weight: 700; font-size: 24px; letter-spacing:.2px; color:#fff; text-decoration:none;
+}
+nav { display:flex; gap:10px; }
